@@ -20,7 +20,10 @@ public class AppTest extends FluentTest {
   @Test
   public void rootTest() {
       goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("");
+      assertThat(pageSource()).contains("Allergy Score Reader");
+      fill("#userAllergyScore").with("5");
+      submit(".btn");
+      assertThat(pageSource()).contains("allergic");
   }
 
   @Test
