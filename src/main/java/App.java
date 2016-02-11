@@ -8,6 +8,16 @@ public class App {
   public static void main(String[] args) {}
 
   public static String allergyScore(Integer score) {
-    return "eggs";
+    if (score == 8) {
+      return "strawberries";
+    }
+    else if (score == 4) {
+      return "shellfish";
+    }
+    else if (score == 2) {
+      return "peanuts";
+    } else {
+      return "eggs";
+    }
   }
 }
