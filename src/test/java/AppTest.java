@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;
+import java.util.ArrayList;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -25,37 +26,52 @@ public class AppTest extends FluentTest {
   @Test
   public void allergyScore_returnsEggsForOne_eggs() {
     App testApp = new App();
-    assertEquals("eggs", testApp.allergyScore(1));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("eggs");
+    assertEquals(allergyList, testApp.allergyScore(1));
   }
 
   @Test
   public void allergyScore_returnsPeanutsForTwo_peanuts() {
     App testApp = new App();
-    assertEquals("peanuts", testApp.allergyScore(2));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("peanuts");
+    assertEquals(allergyList, testApp.allergyScore(2));
   }
 
   @Test
   public void allergyScore_returnsShellfishForFour_shellfish() {
     App testApp = new App();
-    assertEquals("shellfish", testApp.allergyScore(4));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("shellfish");
+    assertEquals(allergyList, testApp.allergyScore(4));
   }
 
   @Test
   public void allergyScore_returnsStrawberriesForEight_strawberries() {
     App testApp = new App();
-    assertEquals("strawberries", testApp.allergyScore(8));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("strawberries");
+    assertEquals(allergyList, testApp.allergyScore(8));
   }
 
   @Test
   public void allergyScore_returnsPeanutsAndEggsForThree_peanutsAndEggs() {
     App testApp = new App();
-    assertEquals("peanuts eggs", testApp.allergyScore(3));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("peanuts");
+    allergyList.add("eggs");
+    assertEquals(allergyList, testApp.allergyScore(3));
   }
 
   @Test
   public void allergyScore_returnsCatsPollenStrawberries_catsPollenStrawberries() {
     App testApp = new App();
-    assertEquals("cats pollen strawberries", testApp.allergyScore(200));
+    ArrayList<String> allergyList = new ArrayList<String>();
+    allergyList.add("cats");
+    allergyList.add("pollen");
+    allergyList.add("strawberries");
+    assertEquals(allergyList, testApp.allergyScore(200));
   }
 
 }
