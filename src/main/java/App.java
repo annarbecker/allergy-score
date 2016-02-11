@@ -19,33 +19,14 @@ public class App {
       allergens.put(64, " pollen");
       allergens.put(128, "cats");
 
-    //loop - if score is greater than or equal to the key
-      //add key value to string
-      //subract key from score
-    //return the string
-    for (Integer i = 128; i > 0; i /= 2) {
-      if (score >= allergens(i)) {
-        userAllergens += allergens.get(i);
-        score -= allergens(i);
+    Integer counter = 128;
+    while (score > 0) {
+      if(score >= counter) {
+        userAllergens += allergens.get(counter);
+        score -= counter;
       }
+      counter /= 2;
     }
-    return userAllergens;
-    //
-    // if (score ) {
-    //
-    // }
-    //
-    //
-    // if (score == 8) {
-    //   return "strawberries";
-    // }
-    // else if (score == 4) {
-    //   return "shellfish";
-    // }
-    // else if (score == 2) {
-    //   return "peanuts";
-    // } else {
-    //   return "eggs";
-    // }
+    return userAllergens.trim();
   }
 }
