@@ -46,4 +46,10 @@ public class AppTest extends FluentTest {
     assertEquals("strawberries", testApp.allergyScore(8));
   }
 
+  @Test
+  public void allergyScore_returnsPeanutsAndEggsForThree_peanutsAndEggs() {
+    App testApp = new App();
+    assertEquals("peanuts eggs", testApp.allergyScore(3));
+  }
+
 }
